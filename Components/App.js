@@ -39,6 +39,11 @@ export default class App extends React.Component {
     );
   }
 
+  multiply(){
+    let newCount = (this.state.number * 2);
+    this.setState({number: newCount})
+  }
+
 
 
   render() {
@@ -77,6 +82,7 @@ export default class App extends React.Component {
                 navigator={navigator}
                 styles={styles}
                 goBack={this.goBack}
+                multiply={this.multiply.bind(this)}
               />
             );
           }
@@ -95,14 +101,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   option: {
-    height: 200,
-    width: 200,
+    height: 50,
+    width: 100,
     backgroundColor: 'navy',
     color: 'palegoldenrod',
   },
   operator: {
-    height: 100,
-    width: 100,
+    height: 200,
+    width: 200,
     backgroundColor: 'tomato',
   }
 });

@@ -54,6 +54,6 @@ const styles = StyleSheet.create({
   option: {
     height: 200,
     width: 200,
-    backgroundColor: 'palegoldenrod'
+    backgroundColor: 'aqua',
   }
 });
