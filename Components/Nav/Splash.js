@@ -9,16 +9,38 @@ import {
 
 export default class Splash extends React.Component {
 
+  goBack() {
+    this.props.navigator.pop();
+  }
 
+  goToAdd() {
+    this.props.navigator.push({id: 'Add'});
+  }
 
+  goToMultiply() {
+    this.props.navigator.push({id: 'Multiply'})
+  }
 
 
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hello</Text>
+
+        <TouchableHighlight
+          onPress={this.goToAdd.bind(this)}
+          style={styles.option}
+        >
+          <Text>Add</Text>
+        </TouchableHighlight>
+        <Text>Current Number: {this.props.number}</Text>
+        <TouchableHighlight
+          onPress={this.goToMultiply.bind(this)}
+          style={styles.option}
+        >
+          <Text>Multiply</Text>
+        </TouchableHighlight>
       </View>
-    )
+    );
   }
 }
 
